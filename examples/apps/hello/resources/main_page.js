@@ -22,7 +22,7 @@ Hello.mainPage = SC.Page.design({
     labelView: SC.LabelView.design({
       layout: { centerX: 0, centerY: 15, width: 200, height: 18 },
       tagName: "h1", 
-      value: "Welcome to SproutCore!"
+      valueBinding: 'Hello.appController.greeting'
     })
   })
 
