@@ -14,13 +14,13 @@ Hello.mainPage = SC.Page.design({
     childViews: 'preferenceCheckbox labelView'.w(),
     
     preferenceCheckbox: SC.CheckboxView.design({
-      layout: { centerX: 0, centerY: -15, width: 200, height: 18 },
+      layout: { centerX: 0, centerY: -15, width: 300, height: 18 },
       title: 'Be traditional',
       value: NO
     }),
     
     labelView: SC.LabelView.design({
-      layout: { centerX: 0, centerY: 15, width: 200, height: 18 },
+      layout: { centerX: 0, centerY: 15, width: 300, height: 18 },
       tagName: "h1", 
       valueBinding: 'Hello.appController.greeting'
     })
