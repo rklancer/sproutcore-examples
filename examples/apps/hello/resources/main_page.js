@@ -1,11 +1,11 @@
 // ==========================================================================
-// Project:   Examples - mainPage
+// Project:   Hello - mainPage
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals Examples */
+/*globals Hello */
 
 // This page describes the main user interface for your application.  
-Examples.mainPage = SC.Page.design({
+Hello.mainPage = SC.Page.design({
 
   // The main pane is made visible on screen as soon as your app is loaded.
   // Add childViews to this pane for views to display immediately on page 

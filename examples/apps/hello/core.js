@@ -1,8 +1,8 @@
 // ==========================================================================
-// Project:   Examples
+// Project:   Hello
 // Copyright: ©2010 My Company, Inc.
 // ==========================================================================
-/*globals Examples */
+/*globals Hello */
 
 /** @namespace
 
@@ -10,10 +10,10 @@
   
   @extends SC.Object
 */
-Examples = SC.Application.create(
-  /** @scope Examples.prototype */ {
+Hello = SC.Application.create(
+  /** @scope Hello.prototype */ {
 
-  NAMESPACE: 'Examples',
+  NAMESPACE: 'Hello',
   VERSION: '0.1.0',
 
   // This is your application store.  You will use this store to access all
