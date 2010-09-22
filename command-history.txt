@@ -136,16 +136,81 @@ $ open http://localhost:4020/
 
 
 
-$ cd [examples-project-root-directory]
+$ cd [Example project root]
 
 
 $ ls apps
 examples
 
+$ sc-gen app Hello
+ ~ Created directory at apps/hello
+ ~ Created file at apps/hello/core.js
+ ~ Created file at apps/hello/main.js
+ ~ Created directory at apps/hello/resources
+ ~ Created file at apps/hello/resources/loading.rhtml
+ ~ Created file at apps/hello/resources/main_page.js
 
-$ mv apps/examples apps/hello
+Your application target is now ready to use!
+
+
+$ git rm apps/examples
+
 
 (revisit http://localhost:4020/, notice that 'hello' is listed as a choice and 'welcome' is not)
 
 (select 'hello' and click on 'Load Application'; you should see "Welcome to SproutCore!")
 
+
+
+$ git add apps/hello
+
+
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	renamed:    apps/examples/core.js -> apps/hello/core.js
+#	renamed:    apps/examples/main.js -> apps/hello/main.js
+#	renamed:    apps/examples/resources/loading.rhtml -> apps/hello/resources/loading.rhtml
+#	renamed:    apps/examples/resources/main_page.js -> apps/hello/resources/main_page.js
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	../.rvmrc
+#	apps/hello/
+#	tmp/
+
+
+$ git commit -m "Replaced 'Examples' app with 'Hello' app"
+[master 176b3f5] Replaced 'Examples' app with 'Hello' app
+ 4 files changed, 14 insertions(+), 14 deletions(-)
+ rename examples/apps/{examples => hello}/core.js (83%)
+ rename examples/apps/{examples => hello}/main.js (79%)
+ rename examples/apps/{examples => hello}/resources/loading.rhtml (100%)
+ rename examples/apps/{examples => hello}/resources/main_page.js (88%)
+
+
+$ cd [sproutcore-examples]
+
+
+$ cat > .gitignore
+.rvmrc
+tmp/
+^D
+
+
+$ git add .gitignore
+
+
+$ git commit -m "Update .gitignore with sproutcore tmp/ and .rvmrc"
+
+
+$ cd examples/apps/hello
+
+
+$ mate .
+
+
+(TODO: brother-bard gitx; howto install sproutcore tmbundle)
