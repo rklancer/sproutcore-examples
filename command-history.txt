@@ -1,0 +1,151 @@
+(install/update rvm and install latest stable ruby; was 1.9.2 at the time of this writing)
+
+$ rvm use 1.9.2
+
+
+$ rvm gemset create sproutcore-examples
+'sproutcore-examples' gemset created (/Users/rklancer/.rvm/gems/ruby-1.9.2-p0@sproutcore-examples).
+
+
+$ cat > .rvmrc
+rvm use 1.9.2@sproutcore-examples
+^D
+
+
+$ cd ..
+
+
+$ cd sproutcore-examples
+
+  ============================================================
+  RVM has encountered a not yet trusted .rvmrc file in the
+  current working directory which contains the following code:
+  ============================================================
+
+rvm use 1.9.2@sproutcore-examples
+
+  ============================================================
+  Trusting an .rvmrc file means that whenever you cd into the
+  directory RVM will excecute this .rvmrc script in your shell
+
+  Do you wish to trust this .rvmrc from now on?
+  ============================================================
+  (y for yes, n for no) > y
+Using /Users/rklancer/.rvm/gems/ruby-1.9.2-p0 with gemset sproutcore-examples
+
+
+$ gem install sproutcore
+Building native extensions.  This could take a while...
+Building native extensions.  This could take a while...
+Successfully installed rack-1.2.1
+Successfully installed json_pure-1.4.6
+Successfully installed extlib-0.9.15
+Successfully installed abstract-1.0.0
+Successfully installed erubis-2.6.6
+Successfully installed thor-0.14.1
+Successfully installed eventmachine-0.12.10
+Successfully installed daemons-1.1.0
+Successfully installed thin-1.2.7
+Successfully installed sproutcore-1.4.1
+10 gems installed
+Installing ri documentation for rack-1.2.1...
+Installing ri documentation for json_pure-1.4.6...
+Installing ri documentation for extlib-0.9.15...
+Installing ri documentation for abstract-1.0.0...
+Installing ri documentation for erubis-2.6.6...
+Installing ri documentation for thor-0.14.1...
+Installing ri documentation for eventmachine-0.12.10...
+Installing ri documentation for daemons-1.1.0...
+Installing ri documentation for thin-1.2.7...
+Installing ri documentation for sproutcore-1.4.1...
+Installing RDoc documentation for rack-1.2.1...
+Installing RDoc documentation for json_pure-1.4.6...
+Installing RDoc documentation for extlib-0.9.15...
+Installing RDoc documentation for abstract-1.0.0...
+Installing RDoc documentation for erubis-2.6.6...
+Installing RDoc documentation for thor-0.14.1...
+Installing RDoc documentation for eventmachine-0.12.10...
+Installing RDoc documentation for daemons-1.1.0...
+Installing RDoc documentation for thin-1.2.7...
+Installing RDoc documentation for sproutcore-1.4.1...
+
+
+$ git init .
+
+
+$ which sc-init
+/Users/rklancer/.rvm/gems/ruby-1.9.1-p378@sproutcore-examples/bin/sc-init
+
+
+$ sc-init examples
+ ~ Created directory at examples
+ ~ Created file at examples/Buildfile
+ ~ Created file at examples/README
+ ~ Created directory at apps
+ ~ Created directory at apps/examples
+ ~ Created file at apps/examples/core.js
+ ~ Created file at apps/examples/main.js
+ ~ Created directory at apps/examples/resources
+ ~ Created file at apps/examples/resources/loading.rhtml
+ ~ Created file at apps/examples/resources/main_page.js
+Your new SproutCore project is ready!
+
+To get started, you can find your initial application in the "apps" directory.
+
+
+$ git add .
+
+
+$ git commit -m "Initial commit of SproutCore examples project"
+[master (root-commit) 7201b9b] Initial commit of SproutCore examples project
+ 6 files changed, 104 insertions(+), 0 deletions(-)
+ create mode 100644 examples/Buildfile
+ create mode 100644 examples/README
+ create mode 100644 examples/apps/examples/core.js
+ create mode 100644 examples/apps/examples/main.js
+ create mode 100644 examples/apps/examples/resources/loading.rhtml
+ create mode 100644 examples/apps/examples/resources/main_page.js
+
+
+$ cd examples
+
+
+$ sc-server -v
+INFO ~ Loaded project at: /Users/rklancer/dev/sproutcore-examples/examples 
+SproutCore v1.4.1 Development Server
+Starting server at http://0.0.0.0:4020 in debug mode
+To quit sc-server, press Control-C
+>> Thin web server (v1.2.7 codename No Hup)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:4020, CTRL+C to stop
+
+
+(in a new Terminal window:)
+
+$ open http://localhost:4020/
+
+(you should see SproutCore Developer Tools)
+
+(If so, congratulations! The install worked.)
+
+(select "examples" and click on 'Load Application')
+
+(you should see "Welcome to SproutÇore!")
+
+(note the url: http://localhost:4020/examples)
+
+
+
+$ cd [examples-project-root-directory]
+
+
+$ ls apps
+examples
+
+
+$ mv apps/examples apps/hello
+
+(revisit http://localhost:4020/, notice that 'hello' is listed as a choice and 'welcome' is not)
+
+(select 'hello' and click on 'Load Application'; you should see "Welcome to SproutCore!")
+
