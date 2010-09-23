@@ -6,10 +6,25 @@
 
 module("Hello.appController");
 
-// TODO: Replace with real unit test for Hello.appController
-test("test description", function() {
-  var expected = "test";
-  var result   = "test";
-  equals(result, expected, "test should equal test");
+test("appController should respect 'useTraditionalGreeting' setting", function () {
+  
+  Hello.appController.set('useTraditionalGreeting', YES);
+  equals( Hello.appController.get('greeting'), 
+    "Hello, world!",
+    "greeting should be traditional when useTraditionalGreeting is YES"
+  );
+  
+  Hello.appController.set('useTraditionalGreeting', NO);
+  equals( Hello.appController.get('greeting'),
+    "Welcome to SproutCore!",
+    "greeting should be nontraditional when useTraditionalGreeting is NO"
+  );
+  
+  Hello.appController.set('useTraditionalGreeting', YES);
+  equals( Hello.appController.get('greeting'), 
+    "Hello, world!",
+    "greeting should be revert to traditional when useTraditionalGreeting is YES again"
+  );
+  
 });
 

@@ -13,6 +13,8 @@
 Hello.appController = SC.ObjectController.create(
 /** @scope Hello.appController.prototype */ {
 
+  useTraditionalGreeting: NO,
+  
   greeting: "appController says: Welcome to SproutCore!"
 
 }) ;
