@@ -214,3 +214,21 @@ $ mate .
 
 
 (TODO: brother-bard gitx; howto install sproutcore tmbundle)
+
+
+$ sc-gen controller Hello.appController
+ ~ Created directory at controllers
+ ~ Created file at controllers/app.js
+ ~ Created directory at tests
+ ~ Created directory at tests/controllers
+ ~ Created file at tests/controllers/app.js
+
+Your controller is now ready to use!
+
+(notice the test file)
+
+
+(updates...)
+
+(visit http://localhost:4020/static/hello/en/current/tests.html)
+
