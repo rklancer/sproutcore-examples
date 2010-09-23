@@ -16,7 +16,7 @@ Hello.mainPage = SC.Page.design({
     preferenceCheckbox: SC.CheckboxView.design({
       layout: { centerX: 0, centerY: -15, width: 300, height: 18 },
       title: 'Be traditional',
-      value: NO
+      valueBinding: 'Hello.appController.useTraditionalGreeting'
     }),
     
     labelView: SC.LabelView.design({
