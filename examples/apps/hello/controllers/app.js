@@ -15,6 +15,8 @@ Hello.appController = SC.ObjectController.create(
 
   useTraditionalGreeting: NO,
   
-  greeting: "Welcome to SproutCore!"
+  greeting: function () {
+    return "Welcome to SproutCore!";
+  }.property()
 
 }) ;
